@@ -31,7 +31,7 @@
 
 </head>
 
-<body ng-app="shopApp" ng-controller="shopController">
+<body ng-app="klant" ng-controller="klantController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -44,7 +44,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">Webshop Sebastiaan</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -70,7 +70,7 @@
 
         <div class="row">
             <div class="col-lg-12 text-left">
-                <h1>Voeg een nieuw product toe: </h1>
+                <h1>Voeg een nieuwe klant toe: </h1>
             </div>
         </div>
         <!-- /.row -->
@@ -82,17 +82,14 @@
   <input type="text" class="form-control" id="itemInput" placeholder="naam ..." ng-model="newItem.name">
 </div>
 <div class="form-group">
-  <label for="itemInput">Prijs</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="prijs ..." ng-model="newItem.price">
+  <label for="itemInput">Adres</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="adres ..." ng-model="newItem.adress">
 </div>
 <div class="form-group">
-  <label for="itemInput">Omschrijving</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="omschrijving ..." ng-model="newItem.description">
+  <label for="itemInput">Email</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="email adres ..." ng-model="newItem.email">
 </div>
-<div class="form-group">
-  <label for="itemInput">Afbeelding</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newItem.image">
-</div>
+
 
 <button type="button" class="btn btn-danger">Reset</button>
 <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
@@ -113,7 +110,7 @@
     <script src="js/angular.min.js"></script>
 
     <!-- Functionaliteiten app-->
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/klantController.js"></script>
 
     <!-- Lokale eenheden -->
     <script src="js\angular-locale_nl-nl.js"></script>

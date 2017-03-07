@@ -31,7 +31,7 @@
 
 </head>
 
-<body ng-app="shopApp" ng-controller="shopController">
+<body ng-app="klant" ng-controller="klantController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -70,20 +70,19 @@
 
         <div class="row">
             <div class="col-lg-12 text-left">
-                <h1>Lijst producten: </h1>
+                <h1>Lijst klanten: </h1>
             </div>
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12 text-left">
                 <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Naam</th>
-                            <th>Prijs</th>
-                            <th>Omschrijving</th>
-                            <th>Afbeelding</th>
+                            <th>Adres</th>
+                            <th>Email</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -100,18 +99,13 @@
 
                             </td>
                             <td>
-                                <span ng-hide="item.updating">{{item.price}}</span>
-                                <input type="text" ng-model="item.price" ng-show="item.updating">
+                                <span ng-hide="item.updating">{{item.adress}}</span>
+                                <input type="text" ng-model="item.adress" ng-show="item.updating">
 
                             </td>
                             <td>
-                                <span ng-hide="item.updating">{{item.description}}</span>
-                                <textarea type="text" ng-model="item.description" ng-show="item.updating"></textarea>
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.image}}</span>
-                                <input type="text" ng-model="item.image" ng-show="item.updating">
+                                <span ng-hide="item.updating">{{item.email}}</span>
+                                <textarea type="text" ng-model="item.email" ng-show="item.updating"></textarea>
 
                             </td>
                             <td>
@@ -124,7 +118,7 @@
                 </table>
             </div>
         </div>
-
+      
     </div>
     <!-- /.container -->
 
@@ -138,7 +132,7 @@
     <script src="js/angular.min.js"></script>
 
     <!-- Functionaliteiten app-->
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/klantController.js"></script>
 
     <!-- Lokale eenheden -->
     <script src="js\angular-locale_nl-nl.js"></script>

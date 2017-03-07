@@ -70,58 +70,33 @@
 
         <div class="row">
             <div class="col-lg-12 text-left">
-                <h1>Lijst producten: </h1>
+                <h1>Voeg een nieuw product toe: </h1>
             </div>
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Naam</th>
-                            <th>Prijs</th>
-                            <th>Omschrijving</th>
-                            <th>Afbeelding</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+            <div class="col-lg-12 text-left">
+              <form>
+<div class="form-group">
+  <label for="itemInput">Naam</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="naam ..." ng-model="newItem.name">
+</div>
+<div class="form-group">
+  <label for="itemInput">Prijs</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="prijs ..." ng-model="newItem.price">
+</div>
+<div class="form-group">
+  <label for="itemInput">Omschrijving</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="omschrijving ..." ng-model="newItem.description">
+</div>
+<div class="form-group">
+  <label for="itemInput">Afbeelding</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newItem.image">
+</div>
 
-                    <tbody>
-                        <tr ng-repeat="item in items">
-                            <td>
-                                {{item.id}}
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.name}}</span>
-                                <input type="text" ng-model="item.name" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.price}}</span>
-                                <input type="text" ng-model="item.price" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.description}}</span>
-                                <textarea type="text" ng-model="item.description" ng-show="item.updating"></textarea>
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.image}}</span>
-                                <input type="text" ng-model="item.image" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-success" ng-click="updateItem(item)" ng-show="item.updating">Save</button>
-                                <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
-                                <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+<button type="button" class="btn btn-danger">Reset</button>
+<button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+</form>
             </div>
         </div>
 
