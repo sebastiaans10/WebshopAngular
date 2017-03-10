@@ -1,15 +1,15 @@
-var module = angular.module('klant', []);
+//var module = angular.module('klant', []);
 
 module.controller('klantController', function($scope){
 
-var localItems = JSON.parse(localStorage.getItem("items"));
+var localKlantItems = JSON.parse(localStorage.getItem("klantItems"));
 
-if(localItems != undefined && localItems.length>0){
-$scope.items = localItems;
+if(localKlantItems != undefined && localKlantItems.length>0){
+$scope.klantItems = localKlantItems;
 }
 
 else{
-  $scope.items = [
+  $scope.klantItems = [
     { id:"0",
       name:"Robert van Veen",
       adress:"Rietstraat 5",
@@ -23,38 +23,38 @@ else{
   ];
 }
 
-$scope.deleteItem = function(item) {
+$scope.deleteItem = function(klantItem) {
 
 		var deleteIndex = -1;
-		$scope.items.forEach(function(e, i) {
-			if(e.id === item.id) {
+		$scope.klantItems.forEach(function(e, i) {
+			if(e.id === klantItem.id) {
 				deleteIndex = i;
 			}
 		});
 
-		$scope.items.splice(deleteIndex, 1);
+		$scope.klantItems.splice(deleteIndex, 1);
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("klantItems", JSON.stringify($scope.klantItems));
 	};
 
 	$scope.saveNewItem = function() {
-		console.log($scope.newItem);
+		console.log($scope.newKlantItem);
 
-		$scope.items.push({
-			name: $scope.newItem.name,
-      adress: $scope.newItem.adress,
-      email: $scope.newItem.email
+		$scope.klantItems.push({
+			name: $scope.newKlantItem.name,
+      adress: $scope.newKlantItem.adress,
+      email: $scope.newKlantItem.email
 		});
 
-		$scope.newItem = {};
+		$scope.newKlantItem = {};
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("klantItems", JSON.stringify($scope.klantItems));
 	};
 
-	$scope.updateItem = function(item) {
-		item.updating=false;
+	$scope.updateItem = function(klantItem) {
+		klantItem.updating=false;
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("klantItems", JSON.stringify($scope.klantItems));
 	};
 
 });

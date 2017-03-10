@@ -31,7 +31,7 @@
 
 </head>
 
-<body ng-app="klant" ng-controller="klantController">
+<body ng-app="shopApp" ng-controller="shopController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -74,7 +74,7 @@
             </div>
         </div>
         <!-- /.row -->
-        <div class="row">
+        <div class="row" ng-controller="klantController">
             <div class="col-lg-12 text-left">
                 <table class="table">
                     <thead>
@@ -88,37 +88,37 @@
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="item in items">
+                        <tr ng-repeat="klantItem in klantItems">
                             <td>
-                                {{item.id}}
+                                {{klantItem.id}}
 
                             </td>
                             <td>
-                                <span ng-hide="item.updating">{{item.name}}</span>
-                                <input type="text" ng-model="item.name" ng-show="item.updating">
+                                <span ng-hide="klantItem.updating">{{klantItem.name}}</span>
+                                <input type="text" ng-model="klantItem.name" ng-show="klantItem.updating">
 
                             </td>
                             <td>
-                                <span ng-hide="item.updating">{{item.adress}}</span>
-                                <input type="text" ng-model="item.adress" ng-show="item.updating">
+                                <span ng-hide="klantItem.updating">{{klantItem.adress}}</span>
+                                <input type="text" ng-model="klantItem.adress" ng-show="klantItem.updating">
 
                             </td>
                             <td>
-                                <span ng-hide="item.updating">{{item.email}}</span>
-                                <textarea type="text" ng-model="item.email" ng-show="item.updating"></textarea>
+                                <span ng-hide="klantItem.updating">{{klantItem.email}}</span>
+                                <textarea type="text" ng-model="klantItem.email" ng-show="klantItem.updating"></textarea>
 
                             </td>
                             <td>
-                                <button type="button" class="btn btn-success" ng-click="updateItem(item)" ng-show="item.updating">Save</button>
-                                <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
-                                <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">Delete</button>
+                                <button type="button" class="btn btn-success" ng-click="updateItem(klantItem)" ng-show="klantItem.updating">Save</button>
+                                <button type="button" class="btn btn-warning" ng-click="klantItem.updating=true;" ng-hide="klantItem.updating">Update</button>
+                                <button type="button" class="btn btn-danger" ng-click="deleteItem(klantItem)">Delete</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-      
+
     </div>
     <!-- /.container -->
 
@@ -132,10 +132,15 @@
     <script src="js/angular.min.js"></script>
 
     <!-- Functionaliteiten app-->
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!-- Functionaliteiten app-->
     <script type="text/javascript" src="js/klantController.js"></script>
 
     <!-- Lokale eenheden -->
     <script src="js\angular-locale_nl-nl.js"></script>
+
+
 
 
 </body>

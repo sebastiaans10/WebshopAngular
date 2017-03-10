@@ -1,4 +1,4 @@
-var module = angular.module('winkelwagen', []);
+//var module = angular.module('winkelwagen', []);
 
 module.controller('winkelwagenController', function($scope){
 
