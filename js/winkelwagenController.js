@@ -1,6 +1,6 @@
 //var module = angular.module('winkelwagen', []);
 
-module.controller('winkelwagenController', function($scope){
+angular.module('shopApp').controller('winkelwagenController', function($scope){
 
 var localwinkelitems = JSON.parse(localStorage.getItem("winkelitems"));
 

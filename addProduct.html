@@ -1,124 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Bare - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <style>
-        body {
-            padding-top: 70px;
-            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-        }
-    </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body ng-app="shopApp" ng-controller="shopController">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Webshop Sebastiaan</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <div class="row">
+        <div class="col-lg-12 text-left">
+            <h1>Voeg een nieuw product toe: </h1>
         </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 text-left">
-                <h1>Voeg een nieuw product toe: </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12 text-left">
-              <form>
-<div class="form-group">
-  <label for="itemInput">Naam</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="naam ..." ng-model="newItem.name">
-</div>
-<div class="form-group">
-  <label for="itemInput">Prijs</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="prijs ..." ng-model="newItem.price">
-</div>
-<div class="form-group">
-  <label for="itemInput">Omschrijving</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="omschrijving ..." ng-model="newItem.description">
-</div>
-<div class="form-group">
-  <label for="itemInput">Afbeelding</label>
-  <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newItem.image">
-</div>
-
-<button type="button" class="btn btn-danger">Reset</button>
-<button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
-</form>
-            </div>
-        </div>
-
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12 text-left">
+            <form>
+                <div class="form-group">
+                    <label for="itemInput">Naam</label>
+                    <input type="text" class="form-control" id="itemInput" placeholder="naam ..." ng-model="newItem.name">
+                </div>
+                <div class="form-group">
+                    <label for="itemInput">Prijs</label>
+                    <input type="text" class="form-control" id="itemInput" placeholder="prijs ..." ng-model="newItem.price">
+                </div>
+                <div class="form-group">
+                    <label for="itemInput">Omschrijving</label>
+                    <input type="text" class="form-control" id="itemInput" placeholder="omschrijving ..." ng-model="newItem.description">
+                </div>
+                <div class="form-group">
+                    <label for="itemInput">Afbeelding</label>
+                    <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newItem.image">
+                </div>
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+                <button type="button" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+            </form>
+        </div>
+    </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- AngularJS-->
-    <script src="js/angular.min.js"></script>
-
-    <!-- Functionaliteiten app-->
-    <script type="text/javascript" src="js/app.js"></script>
-
-    <!-- Lokale eenheden -->
-    <script src="js\angular-locale_nl-nl.js"></script>
-
-
-</body>
-
-</html>
+</div>

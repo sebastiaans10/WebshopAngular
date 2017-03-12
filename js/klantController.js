@@ -1,6 +1,6 @@
 //var module = angular.module('klant', []);
 
-module.controller('klantController', function($scope){
+angular.module('shopApp').controller('klantController', function($scope){
 
 var localKlantItems = JSON.parse(localStorage.getItem("klantItems"));
 
