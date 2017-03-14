@@ -1,12 +1,14 @@
 var shopApp = angular.module('shopApp', ['ngRoute']);
 
 shopApp.config(['$routeProvider', function($routeProvider) {
+
+
     $routeProvider.when('/home', {
             templateUrl: '/views/home.html',
             controller: 'shopController'
         })
         .when('/productList', {
-            templateUrl: '/views/productList.html',
+            templateUrl: '/views/productList.view.html',
             controller: 'shopController'
         })
         .when('/addProduct', {
@@ -24,5 +26,7 @@ shopApp.config(['$routeProvider', function($routeProvider) {
         .otherwise({
             redirectTo: '/home'
         });
+
+
 
 }]);

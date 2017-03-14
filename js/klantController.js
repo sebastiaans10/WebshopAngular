@@ -49,6 +49,8 @@ $scope.deleteItem = function(klantItem) {
 		$scope.newKlantItem = {};
 
 		localStorage.setItem("klantItems", JSON.stringify($scope.klantItems));
+    window.location.href = '#!/klantLijst';
+
 	};
 
 	$scope.updateItem = function(klantItem) {

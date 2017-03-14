@@ -74,6 +74,7 @@ $scope.deleteItem = function(item) {
 		$scope.newItem = {};
 
 		localStorage.setItem("items", JSON.stringify($scope.items));
+    window.location.href = '#!/productList';
 	};
 
 	$scope.updateItem = function(item) {
