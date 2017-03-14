@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shopApp">
 
 <head>
 
@@ -12,7 +12,7 @@
     <title>Bare - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -31,7 +31,7 @@
 
 </head>
 
-<body ng-app="shopApp" ng-controller="shopController">
+<body >
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#/productList">Lijst producten</a>
+                        <a ng-href="#/productList">Lijst producten</a>
                     </li>
                     <li>
                         <a href="#/klantLijst">Lijst klanten</a>
@@ -67,83 +67,7 @@
 
     <!-- Page Content -->
 <div ng-view>
-   <div class="container">
-         <div class="row">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Productid</th>
-                        <th>Naam</th>
-                        <th>Prijs</th>
-                        <th></th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr ng-repeat="winkelitem in winkelitems">
-                        <td>
-                            {{winkelitem.id}}
-
-                        </td>
-                        <td>
-                            {{winkelitem.productid}}
-                        </td>
-                        <td>
-                            {{winkelitem.productnaam}}
-
-
-                        </td>
-                        <td>
-                            {{winkelitem.price}}
-
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger" ng-click="deleteWinkelItem(winkelitem)">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 text-left">
-                <h1>Bestel uw product: </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div id="products" class="row list-group">
-                    <div class="item  col-xs-4 col-lg-4" ng-repeat="item in items">
-                        <div class="thumbnail">
-                            <img class="group list-group-image" ng-src="{{item.image}}" alt="" />
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">
-          {{item.name}}
-</h4>
-                                <p class="group inner list-group-item-text">{{item.description}}
-                                </p>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">
-                                            {{item.price | currency}}
-                                        </p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
   </div>
     <!-- /.container -->
 
@@ -154,15 +78,16 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- AngularJS-->
-    <script src="js/angular.min.js"></script>
-
-    <script src="js/angular.min.js.map"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
     <script src="js/angular-route.min.js"></script>
+
+
+  <!--  <script src="js/angular.min.js.map"></script>
+
 
     <script src="js/angular-route.min.js.map"></script>
 
-
+-->
       <!-- Functionaliteiten app-->
     <script type="text/javascript" src="js/app.js"></script>
 

@@ -1,0 +1,77 @@
+<div class="container">
+      <div class="row">
+         <table class="table">
+             <thead>
+                 <tr>
+                     <th>ID</th>
+                     <th>Productid</th>
+                     <th>Naam</th>
+                     <th>Prijs</th>
+                     <th></th>
+                 </tr>
+             </thead>
+
+             <tbody>
+                 <tr ng-repeat="winkelitem in winkelitems">
+                     <td>
+                         {{winkelitem.id}}
+
+                     </td>
+                     <td>
+                         {{winkelitem.productid}}
+                     </td>
+                     <td>
+                         {{winkelitem.productnaam}}
+
+
+                     </td>
+                     <td>
+                         {{winkelitem.price}}
+
+                     </td>
+                     <td>
+                         <button type="button" class="btn btn-danger" ng-click="deleteWinkelItem(winkelitem)">Delete</button>
+                     </td>
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+     <div class="row">
+         <div class="col-lg-12 text-left">
+             <h1>Bestel uw product: </h1>
+         </div>
+     </div>
+     <!-- /.row -->
+     <div class="row">
+         <div class="col-lg-12 text-center">
+             <div id="products" class="row list-group">
+                 <div class="item  col-xs-4 col-lg-4" ng-repeat="item in items">
+                     <div class="thumbnail">
+                         <img class="group list-group-image" ng-src="{{item.image}}" alt="" />
+                         <div class="caption">
+                             <h4 class="group inner list-group-item-heading">
+       {{item.name}}
+</h4>
+                             <p class="group inner list-group-item-text">{{item.description}}
+                             </p>
+                             <div class="row">
+                                 <div class="col-xs-12 col-md-6">
+                                     <p class="lead">
+                                         {{item.price | currency}}
+                                     </p>
+                                 </div>
+                                 <div class="col-xs-12 col-md-6">
+                                     <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+             </div>
+
+
+         </div>
+     </div>
+
+ </div>

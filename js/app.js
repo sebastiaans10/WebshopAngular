@@ -1,19 +1,20 @@
 var shopApp = angular.module('shopApp', ['ngRoute']);
 
 shopApp.config(['$routeProvider', function($routeProvider) {
-    $routeProvider
-        .when('/home', {
-            templateUrl: '/views/index.html',
-            controller: 'winkelwagenController'
+    $routeProvider.when('/home', {
+            templateUrl: '/views/home.html',
+            controller: 'shopController'
         })
         .when('/productList', {
-            templateUrl: '/views/productList.html'
+            templateUrl: '/views/productList.html',
+            controller: 'shopController'
         })
         .when('/addProduct', {
-            templateUrl: '/views/addProduct.html'
+            templateUrl: '/views/addProduct.html',
+            controller: 'shopController'
         })
         .when('/klantLijst', {
-            templateUrl: '/views/klantLijst',
+            templateUrl: '/views/klantLijst.html',
             controller: 'klantController'
         })
         .when('/addKlant', {
@@ -21,7 +22,7 @@ shopApp.config(['$routeProvider', function($routeProvider) {
             controller: 'klantController'
         })
         .otherwise({
-            redirectTo: '/index.html'
+            redirectTo: '/home'
         });
 
 }]);
