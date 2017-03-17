@@ -38,6 +38,18 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 44px;
+  background-color: #222;
+  width: 100%;
+}
+.clock{
+  color: white;
+}
+
 [hidden],
 template {
   display: none;
