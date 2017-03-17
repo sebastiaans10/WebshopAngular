@@ -65,6 +65,7 @@ $scope.deleteItem = function(item) {
 		console.log($scope.newItem);
 
 		$scope.items.push({
+      id: $scope.newItem.id,
 			name: $scope.newItem.name,
       price: $scope.newItem.price,
       description: $scope.newItem.description,

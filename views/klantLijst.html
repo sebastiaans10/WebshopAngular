@@ -12,7 +12,7 @@
             </div>
         </div>
         <!-- /.row -->
-        <div class="row" ng-controller="klantController">
+        <div class="row" >
             <div class="col-lg-12 text-left">
                 <table class="table">
                     <thead>
@@ -26,7 +26,7 @@
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="klantItem in klantItems">
+                        <tr ng-repeat="klantItem in vm.klanten">
                             <td>
                                 {{klantItem.id}}
 
@@ -37,7 +37,7 @@
 
                             </td>
                             <td>
-                                <span ng-hide="klantItem.updating">{{klantItem.adress}}</span>
+                                <span ng-hide="klantItem.updating">{{klantItem.adres}}</span>
                                 <input type="text" ng-model="klantItem.adress" ng-show="klantItem.updating">
 
                             </td>

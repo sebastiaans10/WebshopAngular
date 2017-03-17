@@ -1,6 +1,46 @@
 //var module = angular.module('klant', []);
 
-angular.module('shopApp').controller('klantController', function($scope){
+
+(function(){
+  'use strict';
+
+
+  shopApp.controller('klantController', klantController);
+
+  function klantController(klantService, $scope){
+    $scope.vm = {};
+
+    var localItems = JSON.parse(localStorage.getItem("klanten"));
+
+    if(localItems != undefined && localItems.length>0){
+    $scope.vm = localItems;
+    }
+    else{
+      $scope.vm.klanten = klantService.getKlanten();
+
+    }
+    
+    $scope.vm.saveNewKlant = function(){
+      var newPerson = {
+        name:   $scope.vm.newKlantItem.name,
+        adres:  $scope.vm.newKlantItem.adres,
+        email:  $scope.vm.newKlantItem.email
+      };
+        klantService.addKlant(newPerson);
+        $scope.newKlantItem = {};
+
+    		localStorage.setItem("klanten", JSON.stringify($scope.vm.klanten));
+        window.location.href = '#!/klantLijst';
+
+
+    };
+    console.log($scope.vm);
+
+  }
+
+
+})();
+/*angular.module('shopApp').controller('klantController', function($scope, klantFactory){
 
 var localKlantItems = JSON.parse(localStorage.getItem("klantItems"));
 
@@ -8,8 +48,9 @@ if(localKlantItems != undefined && localKlantItems.length>0){
 $scope.klantItems = localKlantItems;
 }
 
-else{
-  $scope.klantItems = [
+//else{
+  $scope.klantItems = klantFactory.getKlanten();
+  /*[
     { id:"0",
       name:"Robert van Veen",
       adress:"Rietstraat 5",
@@ -21,7 +62,7 @@ else{
       email: "frankandersen@gmail.com"
     }
   ];
-}
+//}
 
 $scope.deleteItem = function(klantItem) {
 
@@ -41,6 +82,7 @@ $scope.deleteItem = function(klantItem) {
 		console.log($scope.newKlantItem);
 
 		$scope.klantItems.push({
+      id: $scope.newKlantItem.id,
 			name: $scope.newKlantItem.name,
       adress: $scope.newKlantItem.adress,
       email: $scope.newKlantItem.email
@@ -60,3 +102,4 @@ $scope.deleteItem = function(klantItem) {
 	};
 
 });
+*/
