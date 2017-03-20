@@ -25,8 +25,7 @@ shopApp.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/home', {
             templateUrl: '/views/home.html',
-            controller: 'shopController',
-            directive: 'myClock'
+            controller: 'shopController'
         })
         .when('/productList', {
             templateUrl: '/views/productList.view.html',

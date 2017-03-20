@@ -1,45 +1,44 @@
 //var module = angular.module('klant', []);
 
 
-(function(){
-  'use strict';
 
+  shopApp.controller('klantController', ['klantService', '$scope',
+  function (klantService, $scope){
+  //  $scope.vm = {};
 
-  shopApp.controller('klantController', klantController);
+  //  var localItems = JSON.parse(localStorage.getItem("klanten"));
+    $scope.klanten = klantService.getKlanten();
 
-  function klantController(klantService, $scope){
-    $scope.vm = {};
-
-    var localItems = JSON.parse(localStorage.getItem("klanten"));
-
-    if(localItems != undefined && localItems.length>0){
+  /*  if(localItems != undefined && localItems.length>0){
     $scope.vm = localItems;
     }
     else{
       $scope.vm.klanten = klantService.getKlanten();
 
-    }
-    
-    $scope.vm.saveNewKlant = function(){
+    }*/
+
+    $scope.saveNewKlant = function(){
+
       var newPerson = {
-        name:   $scope.vm.newKlantItem.name,
-        adres:  $scope.vm.newKlantItem.adres,
-        email:  $scope.vm.newKlantItem.email
+        name:   $scope.newKlantItem.name,
+        adres:  $scope.newKlantItem.adres,
+        email:  $scope.newKlantItem.email
       };
         klantService.addKlant(newPerson);
-        $scope.newKlantItem = {};
+      //  $scope.newKlantItem = {};
 
-    		localStorage.setItem("klanten", JSON.stringify($scope.vm.klanten));
-        window.location.href = '#!/klantLijst';
-
+    		//localStorage.setItem("klanten", JSON.stringify($scope.vm.klanten));
+      //  $location.path('/');
 
     };
-    console.log($scope.vm);
+    //console.log($scope.vm);
 
-  }
+  }]);
+  //klantController.$inject = ['klantService', '$location'];
 
 
-})();
+
+
 /*angular.module('shopApp').controller('klantController', function($scope, klantFactory){
 
 var localKlantItems = JSON.parse(localStorage.getItem("klantItems"));

@@ -24,7 +24,7 @@ this.getKlant = function(id){
   return klanten[id-1];
 };
 
-function addKlant(newPerson){
+this.addKlant=function(newPerson){
   var id = 0;
   for(var i = 0; i < klanten.length; i++){
     if(klanten[i].id >= id){
@@ -35,7 +35,7 @@ function addKlant(newPerson){
   console.log(newPerson);
   klanten.push(newPerson);
 
-}
+};
 
 
 return {
