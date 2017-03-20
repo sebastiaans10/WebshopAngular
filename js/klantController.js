@@ -2,8 +2,8 @@
 
 
 
-  shopApp.controller('klantController', ['klantService', '$scope',
-  function (klantService, $scope){
+  shopApp.controller('klantController', ['klantService', '$scope', '$location',
+  function (klantService, $scope, $location){
   //  $scope.vm = {};
 
   //  var localItems = JSON.parse(localStorage.getItem("klanten"));
@@ -25,10 +25,11 @@
         email:  $scope.newKlantItem.email
       };
         klantService.addKlant(newPerson);
+
       //  $scope.newKlantItem = {};
 
     		//localStorage.setItem("klanten", JSON.stringify($scope.vm.klanten));
-      //  $location.path('/');
+       $location.path('/');
 
     };
     //console.log($scope.vm);

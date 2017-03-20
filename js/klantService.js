@@ -1,7 +1,46 @@
-var shopAppFactory = angular.module('shopApp')
-  .service('klantService', klantService);
+angular.module('shopApp')
+  .service('klantService', function() {
 
-  function klantService(){
+    var klanten = [{
+            id: 0,
+            'name': 'Robert',
+            'adres': 'Lindelaan 5',
+            'email': 'rob@gmail.com'
+        },
+        {
+            id: 1,
+            'name': 'Jan',
+            'adres': 'Kleiweg 5',
+            'email': 'jan@gmail.com'
+        }
+    ];
+
+    this.getKlanten = function() {
+      return klanten;
+    };
+
+    this.addKlant = function(klant) {
+      console.log("WERK IK??");
+
+      var id = 0;
+      for(var i = 0; i < klanten.length; i++){
+        if(klanten[i].id >= id){
+          id = klanten[i].id +1;
+        }
+      }
+
+      console.log(id);
+      klant.id = id;
+      console.log(klant);
+      klanten.push(klant);
+
+    };
+
+
+
+  });
+
+  /*function klantService(){
     var klanten = [{
             id: 0,
             'name': 'Robert',
@@ -41,4 +80,4 @@ this.addKlant=function(newPerson){
 return {
   getKlanten: getKlanten
 };
-}
+}*/
