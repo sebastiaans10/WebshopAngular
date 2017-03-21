@@ -31,6 +31,8 @@ angular.module('shopApp')
 
     };
 
+    
+
     this.updateKlant = function(klantItem){
       for(var i in klanten){
         if(klanten[i].id==klantItem.id){
