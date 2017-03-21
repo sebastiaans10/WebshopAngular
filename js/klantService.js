@@ -19,16 +19,52 @@ angular.module('shopApp')
       return klanten;
     };
 
+    this.deleteKlant = function(klant){
+        var deleteIndex= -1;
+        klanten.forEach(function(e,i){
+          if(e.id ===klant.id){
+              deleteIndex = i;
+          }
+
+        });
+        klanten.splice(deleteIndex, 1);
+
+    };
+
+    this.updateKlant = function(klantItem){
+      for(var i in klanten){
+        if(klanten[i].id==klantItem.id){
+          klanten[i]=klantItem;
+          break;
+        }
+      }
+    };
+
+  /*  $scope.deleteItem = function(klantItem) {
+
+    		var deleteIndex = -1;
+    		$scope.klantItems.forEach(function(e, i) {
+    			if(e.id === klantItem.id) {
+    				deleteIndex = i;
+    			}
+    		});
+
+    		$scope.klantItems.splice(deleteIndex, 1);
+
+    		localStorage.setItem("klantItems", JSON.stringify($scope.klantItems));
+    	};*/
+
     this.addKlant = function(klant) {
       console.log("WERK IK??");
 
-      var id = 0;
+      /*var id = 0;
       for(var i = 0; i < klanten.length; i++){
         if(klanten[i].id >= id){
           id = klanten[i].id +1;
         }
       }
-
+*/
+      var id = Date.now();
       console.log(id);
       klant.id = id;
       console.log(klant);

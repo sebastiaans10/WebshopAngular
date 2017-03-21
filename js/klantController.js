@@ -7,7 +7,15 @@
   //  $scope.vm = {};
 
   //  var localItems = JSON.parse(localStorage.getItem("klanten"));
+  var localItems = JSON.parse(localStorage.getItem("klanten"));
+
+  if(localItems != undefined && localItems.length>0){
+  $scope.klanten = localItems;
+  }
+  else{
     $scope.klanten = klantService.getKlanten();
+
+  }
 
   /*  if(localItems != undefined && localItems.length>0){
     $scope.vm = localItems;
@@ -25,15 +33,35 @@
         email:  $scope.newKlantItem.email
       };
         klantService.addKlant(newPerson);
-
-      //  $scope.newKlantItem = {};
-
-    		//localStorage.setItem("klanten", JSON.stringify($scope.vm.klanten));
-       $location.path('/');
+        $scope.klanten.push(newPerson);
+      $scope.newKlantItem = {};
+    	localStorage.setItem("klanten", JSON.stringify($scope.klanten));
+       $location.path('/klantLijst');
 
     };
-    //console.log($scope.vm);
 
+    $scope.deleteItem = function(klantItem) {
+      klantService.deleteKlant(klantItem);
+      var deleteIndex = -1;
+  		$scope.klanten.forEach(function(e, i) {
+  			if(e.id === klantItem.id) {
+  				deleteIndex = i;
+  			}
+  		});
+
+  		$scope.klanten.splice(deleteIndex, 1);
+
+    //  $scope.klanten.splice(deleteIndex, 1);
+      localStorage.setItem("klanten", JSON.stringify($scope.klanten));
+
+    		};
+    //console.log($scope.vm);
+    $scope.updateItem = function(klantItem) {
+      klantItem.updating=false;
+      klantService.updateKlant(klantItem);
+
+      localStorage.setItem("klanten", JSON.stringify($scope.klanten));
+    };
   }]);
   //klantController.$inject = ['klantService', '$location'];
 

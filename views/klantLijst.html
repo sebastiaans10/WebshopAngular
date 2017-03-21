@@ -26,7 +26,7 @@
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="klantItem in klanten">
+                        <tr ng-repeat="klantItem in klanten track by klantItem.id">
                             <td>
                                 {{klantItem.id}}
 
@@ -38,7 +38,7 @@
                             </td>
                             <td>
                                 <span ng-hide="klantItem.updating">{{klantItem.adres}}</span>
-                                <input type="text" ng-model="klantItem.adress" ng-show="klantItem.updating">
+                                <input type="text" ng-model="klantItem.adres" ng-show="klantItem.updating">
 
                             </td>
                             <td>
