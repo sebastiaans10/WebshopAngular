@@ -1,0 +1,39 @@
+<div class="container">
+
+<div class="row">
+   <table class="table">
+       <thead>
+           <tr>
+               <th>ProductID</th>
+               <th>ProductNaam</th>
+               <th>KlantID</th>
+               <th>KlantNaam</th>
+           </tr>
+       </thead>
+
+       <tbody>
+           <tr ng-repeat="winkelitem in winkelitems">
+               <td>
+                   {{winkelitem.id}}
+
+               </td>
+               <td>
+                   {{winkelitem.productid}}
+               </td>
+               <td>
+                   {{winkelitem.productnaam}}
+
+
+               </td>
+               <td>
+                   {{winkelitem.price}}
+
+               </td>
+               <td>
+                   <button type="button" class="btn btn-danger" ng-click="deleteWinkelItem(winkelitem)">Delete</button>
+               </td>
+           </tr>
+       </tbody>
+   </table>
+</div>
+</div>

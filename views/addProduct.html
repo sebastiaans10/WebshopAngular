@@ -9,29 +9,25 @@
     <div class="row">
         <div class="col-lg-12 text-left">
             <form>
-              <div class="form-group">
-                  <label for="itemInput">ID</label>
-                  <input type="text" class="form-control" id="itemInput" placeholder="id ..." ng-model="newItem.id">
-              </div>
                 <div class="form-group">
                     <label for="itemInput">Naam</label>
-                    <input type="text" class="form-control" id="itemInput" placeholder="naam ..." ng-model="newItem.name">
+                    <input type="text" class="form-control" id="itemInput" placeholder="naam ..." ng-model="newProductItem.name">
                 </div>
                 <div class="form-group">
                     <label for="itemInput">Prijs</label>
-                    <input type="text" class="form-control" id="itemInput" placeholder="prijs ..." ng-model="newItem.price">
+                    <input type="text" class="form-control" id="itemInput" placeholder="prijs ..." ng-model="newProductItem.price">
                 </div>
                 <div class="form-group">
                     <label for="itemInput">Omschrijving</label>
-                    <input type="text" class="form-control" id="itemInput" placeholder="omschrijving ..." ng-model="newItem.description">
+                    <input type="text" class="form-control" id="itemInput" placeholder="omschrijving ..." ng-model="newProductItem.description">
                 </div>
                 <div class="form-group">
                     <label for="itemInput">Afbeelding</label>
-                    <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newItem.image">
+                    <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newProductItem.image">
                 </div>
 
                 <button type="button" class="btn btn-danger">Reset</button>
-                <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+                <button type="submit" class="btn btn-primary" ng-click="saveNewProduct()">Save</button>
             </form>
         </div>
     </div>

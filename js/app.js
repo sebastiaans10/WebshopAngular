@@ -29,11 +29,11 @@ shopApp.config(['$routeProvider', function($routeProvider) {
         })
         .when('/productList', {
             templateUrl: '/views/productList.view.html',
-            controller: 'shopController'
+            controller: 'productController'
         })
         .when('/addProduct', {
             templateUrl: '/views/addProduct.html',
-            controller: 'shopController'
+            controller: 'productController'
         })
         .when('/klantLijst', {
             templateUrl: '/views/klantLijst.html',
@@ -42,6 +42,10 @@ shopApp.config(['$routeProvider', function($routeProvider) {
         .when('/addKlant', {
             templateUrl: '/views/addKlant.html',
             controller: 'klantController'
+        })
+        .when('/winkelwagen',{
+            templateUrl: '/views/winkelwagen.html',
+            controller: 'winkelwagenController'
         })
         .otherwise({
             redirectTo: '/home'

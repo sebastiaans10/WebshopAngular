@@ -30,4 +30,8 @@ shopApp.controller('klantController', ['klantService', '$scope', '$location',
             });
         };
 
+        $scope.redirect = function(){
+          $location.path('/klantLijst');
+};
+
     }]);

@@ -1,4 +1,9 @@
-angular.module('shopApp').controller('shopController', function($scope){
+shopApp.controller('shopController', ['productService', '$scope', '$location',
+  function(productService, $scope, $location){
+    $scope.items = productService.getProducten();
+  }]);
+
+/*angular.module('shopApp').controller('shopController', function($scope){
 
 var localItems = JSON.parse(localStorage.getItem("items"));
 
@@ -84,4 +89,4 @@ $scope.deleteItem = function(item) {
 		localStorage.setItem("items", JSON.stringify($scope.items));
 	};
 
-});
+});*/

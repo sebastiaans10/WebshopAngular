@@ -27,7 +27,7 @@
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="item in items">
+                        <tr ng-repeat="item in producten">
                             <td>
                                 {{item.id}}
 
@@ -53,9 +53,9 @@
 
                             </td>
                             <td>
-                                <button type="button" class="btn btn-success" ng-click="updateItem(item)" ng-show="item.updating">Save</button>
+                                <button type="button" class="btn btn-success" ng-click="updateProduct(item)" ng-show="item.updating">Save</button>
                                 <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
-                                <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">Delete</button>
+                                <button type="button" class="btn btn-danger" ng-click="deleteProduct(item)">Delete</button>
                             </td>
                         </tr>
                     </tbody>
