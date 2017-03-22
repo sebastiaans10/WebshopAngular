@@ -4,6 +4,7 @@
    <table class="table">
        <thead>
            <tr>
+               <th>ID</th>
                <th>ProductID</th>
                <th>ProductNaam</th>
                <th>KlantID</th>
@@ -13,20 +14,25 @@
 
        <tbody>
            <tr ng-repeat="winkelitem in winkelitems">
+             <td>
+               {{winkelitem.id}}
+
+             </td>
+
                <td>
-                   {{winkelitem.id}}
+                   {{winkelitem.pID}}
 
                </td>
                <td>
-                   {{winkelitem.productid}}
+                   {{winkelitem.pNaam}}
                </td>
                <td>
-                   {{winkelitem.productnaam}}
+                   {{winkelitem.kID}}
 
 
                </td>
                <td>
-                   {{winkelitem.price}}
+                   {{winkelitem.kNaam}}
 
                </td>
                <td>

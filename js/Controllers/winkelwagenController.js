@@ -1,5 +1,12 @@
 //var module = angular.module('winkelwagen', []);
+shopApp.controller('winkelwagenController', ['winkelwagenService', 'productService', 'klantService', '$scope', '$location',
+function(winkelwagenService, productService, klantService, $scope, $location){
+	$scope.winkelitems = winkelwagenService.getWinkelItems();
+	
+}
+]);
 
+/*
 angular.module('shopApp').controller('winkelwagenController', function($scope){
 
 var localwinkelitems = JSON.parse(localStorage.getItem("winkelitems"));
@@ -43,3 +50,4 @@ $scope.deleteWinkelItem = function(winkelitem) {
 	};
 
 });
+*/

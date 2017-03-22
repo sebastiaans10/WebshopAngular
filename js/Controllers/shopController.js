@@ -1,7 +1,25 @@
-shopApp.controller('shopController', ['productService', '$scope', '$location',
-  function(productService, $scope, $location){
+shopApp.controller('shopController', ['productService', 'winkelwagenService', 'klantService', '$scope', '$location',
+  function(productService, winkelwagenService, klantService, $scope, $location){
     $scope.items = productService.getProducten();
-  }]);
+
+    $scope.addItemToCart = function(item){
+        let klant = klantService.getKlant(1);
+
+        var newWinkelItempje = {
+          pID: item.id,
+          pNaam: item.name,
+          kID: klant.id,
+          kNaam: klant.name
+        };
+
+        winkelwagenService.addWinkelItem(newWinkelItempje, (data) => {
+            $scope.winkelitems = data;
+            $scope.newWinkelItem = {};
+        });
+
+    };
+}]);
+
 
 /*angular.module('shopApp').controller('shopController', function($scope){
 

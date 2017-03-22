@@ -9,6 +9,11 @@ angular.module('shopApp')
             return JSON.parse(localStorage.getItem('klanten')) || [];
         };
 
+        this.getKlant = function(id){
+          var klanten = this.getKlanten();
+          return klanten[id-1];
+        };
+
         /**
          * Houdt de localStorage up-to-date wanneer er wijzigingen plaatsvinden.
          *
