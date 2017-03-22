@@ -2,9 +2,14 @@
 shopApp.controller('winkelwagenController', ['winkelwagenService', 'productService', 'klantService', '$scope', '$location',
 function(winkelwagenService, productService, klantService, $scope, $location){
 	$scope.winkelitems = winkelwagenService.getWinkelItems();
-	
-}
-]);
+
+	$scope.deleteWinkelItem = function (winkelitem) {
+			winkelwagenService.deleteWinkelItem(winkelitem, (data) => {
+					$scope.winkelitems = data;
+			});
+	};
+
+}]);
 
 /*
 angular.module('shopApp').controller('winkelwagenController', function($scope){
