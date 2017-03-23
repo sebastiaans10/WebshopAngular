@@ -2,14 +2,16 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
     function (productService, $scope, $location) {
         $scope.producten = productService.getProducten();
 
+
         $scope.saveNewProduct = function () {
+          var enoughStock1 = true;
             var newProduct = {
                 name: $scope.newProductItem.name,
                 price: $scope.newProductItem.price,
                 description: $scope.newProductItem.description,
                 image: $scope.newProductItem.image,
                 voorraad: $scope.newProductItem.voorraad,
-                disable: true
+                enoughStock: enoughStock1
             };
 
             productService.addProduct(newProduct, (data) => {

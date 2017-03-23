@@ -4,6 +4,11 @@ shopApp.controller('shopController', ['productService', 'winkelwagenService', 'k
 
         $scope.addItemToCart = function(item) {
 
+          console.log(item.voorraad);
+          console.log(item.enoughStock);
+          if(item.voorraad>0){
+            item.enoughStock =true;
+
             let klant = klantService.getKlant(1);
 
             var newWinkelItempje = {
@@ -12,7 +17,6 @@ shopApp.controller('shopController', ['productService', 'winkelwagenService', 'k
                 kID: klant.id,
                 kNaam: klant.name
             };
-
 
             winkelwagenService.addWinkelItem(newWinkelItempje, (data) => {
                     $scope.winkelitems = data;
@@ -23,7 +27,7 @@ shopApp.controller('shopController', ['productService', 'winkelwagenService', 'k
             let newItem = productService.updateVoorraadNegative(item);
 
             this.updateProduct = function(newItem) {
-                console.log(item.voorraad);
+              //  console.log(item.voorraad);
                 newItem.updating = false;
                 productService.updateProduct(newItem, (data) => {
                     $scope.items = data;
@@ -31,6 +35,10 @@ shopApp.controller('shopController', ['productService', 'winkelwagenService', 'k
             };
             this.updateProduct(newItem);
 
+}
+else{
+  item.enoughStock=false;
+}
 
         };
     }
