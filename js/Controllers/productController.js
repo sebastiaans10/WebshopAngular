@@ -7,7 +7,9 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
                 name: $scope.newProductItem.name,
                 price: $scope.newProductItem.price,
                 description: $scope.newProductItem.description,
-                image: $scope.newProductItem.image
+                image: $scope.newProductItem.image,
+                voorraad: $scope.newProductItem.voorraad,
+                disable: true
             };
 
             productService.addProduct(newProduct, (data) => {

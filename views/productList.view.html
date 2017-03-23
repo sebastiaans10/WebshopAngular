@@ -22,6 +22,7 @@
                             <th>Prijs</th>
                             <th>Omschrijving</th>
                             <th>Afbeelding</th>
+                            <th>Vooraad</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -50,6 +51,11 @@
                             <td>
                                 <span ng-hide="item.updating">{{item.image}}</span>
                                 <input type="text" ng-model="item.image" ng-show="item.updating">
+
+                            </td>
+                            <td>
+                                <span ng-hide="item.updating">{{item.voorraad}}</span>
+                                <input type="text" ng-model="item.voorraad" ng-show="item.updating">
 
                             </td>
                             <td>

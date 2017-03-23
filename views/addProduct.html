@@ -25,6 +25,10 @@
                     <label for="itemInput">Afbeelding</label>
                     <input type="text" class="form-control" id="itemInput" placeholder="afbeelding ..." ng-model="newProductItem.image">
                 </div>
+                <div class="form-group">
+                    <label for="itemInput">Vooraad</label>
+                    <input type="text" class="form-control" id="itemInput" placeholder="voorraad ..." ng-model="newProductItem.voorraad">
+                </div>
 
                 <button type="button" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-primary" ng-click="saveNewProduct()">Save</button>

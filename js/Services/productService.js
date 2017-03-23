@@ -9,6 +9,15 @@ angular.module('shopApp')
             return JSON.parse(localStorage.getItem('producten')) || [];
         };
 
+        this.getProduct = function(id){
+
+          let producten = this.getProducten();
+          console.log(id);
+
+          let product = producten[id-1];
+          return product;
+        };
+
         /**
          * Houdt de localStorage up-to-date wanneer er wijzigingen plaatsvinden.
          *
@@ -70,4 +79,17 @@ angular.module('shopApp')
             this.updateProducten(modified);
             cb(modified);
         };
+
+
+
+        this.updateVoorraadNegative = function(item){
+          item.voorraad = item.voorraad -1;
+        return item;
+          };
+
+          this.updateVoorraadPositive = function(item){
+            console.log(item);
+            item.voorraad = item.voorraad +1;
+          return item;
+            };
     });

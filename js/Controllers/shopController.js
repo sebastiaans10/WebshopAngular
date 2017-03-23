@@ -1,24 +1,40 @@
 shopApp.controller('shopController', ['productService', 'winkelwagenService', 'klantService', '$scope', '$location',
-  function(productService, winkelwagenService, klantService, $scope, $location){
-    $scope.items = productService.getProducten();
+    function(productService, winkelwagenService, klantService, $scope, $location) {
+        $scope.items = productService.getProducten();
 
-    $scope.addItemToCart = function(item){
-        let klant = klantService.getKlant(1);
+        $scope.addItemToCart = function(item) {
 
-        var newWinkelItempje = {
-          pID: item.id,
-          pNaam: item.name,
-          kID: klant.id,
-          kNaam: klant.name
+            let klant = klantService.getKlant(1);
+
+            var newWinkelItempje = {
+                pID: item.id,
+                pNaam: item.name,
+                kID: klant.id,
+                kNaam: klant.name
+            };
+
+
+            winkelwagenService.addWinkelItem(newWinkelItempje, (data) => {
+                    $scope.winkelitems = data;
+                    $scope.newWinkelItem = {};
+                }
+
+            );
+            let newItem = productService.updateVoorraadNegative(item);
+
+            this.updateProduct = function(newItem) {
+                console.log(item.voorraad);
+                newItem.updating = false;
+                productService.updateProduct(newItem, (data) => {
+                    $scope.items = data;
+                });
+            };
+            this.updateProduct(newItem);
+
+
         };
-
-        winkelwagenService.addWinkelItem(newWinkelItempje, (data) => {
-            $scope.winkelitems = data;
-            $scope.newWinkelItem = {};
-        });
-
-    };
-}]);
+    }
+]);
 
 
 /*angular.module('shopApp').controller('shopController', function($scope){
