@@ -31,7 +31,7 @@ angular.module('shopApp')
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
         this.addKlant = function (nieuweKlant, cb) {
-            let klanten = this.getKlanten();
+            var klanten = this.getKlanten();
             klanten.push(Object.assign({
                 id: klanten.length > 0 ? klanten[klanten.length - 1].id + 1 : 1
             }, nieuweKlant));
@@ -48,8 +48,8 @@ angular.module('shopApp')
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
         this.deleteKlant = function (removedKlant, cb) {
-            let klanten = this.getKlanten();
-            let modified = klanten.filter(klant => removedKlant.id !== klant.id);
+            var klanten = this.getKlanten();
+            var modified = klanten.filter(function(klant) {return (removedKlant.id !== klant.id);});
 
             // update localStorage
             this.updateKlanten(modified);
@@ -63,8 +63,8 @@ angular.module('shopApp')
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
         this.updateKlant = function (updatedKlant, cb) {
-            let klanten = this.getKlanten();
-            let modified = klanten.map(klant => {
+            var klanten = this.getKlanten();
+            var modified = klanten.map(function(klant) {
                 if (klant.id === updatedKlant.id) {
                     return updatedKlant;
                 }

@@ -1,4 +1,4 @@
-describe('Filter: puntjesfilter', function() {
+/*describe('Filter: puntjesfilter', function() {
 
 	var filter;
 
@@ -30,4 +30,4 @@ describe('Filter: puntjesfilter', function() {
 		expect(filter(input)).toBe(output);
 	});
 
-});
+});*/

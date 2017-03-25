@@ -9,7 +9,7 @@ shopApp.controller('shopController', ['productService', 'winkelwagenService', 'k
           if(item.voorraad>0){
             item.enoughStock =true;
 
-            let klant = klantService.getKlant(1);
+            var klant = klantService.getKlant(1);
 
             var newWinkelItempje = {
                 pID: item.id,
@@ -18,18 +18,18 @@ shopApp.controller('shopController', ['productService', 'winkelwagenService', 'k
                 kNaam: klant.name
             };
 
-            winkelwagenService.addWinkelItem(newWinkelItempje, (data) => {
+            winkelwagenService.addWinkelItem(newWinkelItempje, function callback(data) {
                     $scope.winkelitems = data;
                     $scope.newWinkelItem = {};
                 }
 
             );
-            let newItem = productService.updateVoorraadNegative(item);
+            var newItem = productService.updateVoorraadNegative(item);
 
             this.updateProduct = function(newItem) {
               //  console.log(item.voorraad);
                 newItem.updating = false;
-                productService.updateProduct(newItem, (data) => {
+                productService.updateProduct(newItem, function callback(data) {
                     $scope.items = data;
                 });
             };

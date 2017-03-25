@@ -9,7 +9,7 @@ angular.module('shopApp').service('winkelwagenService', function(){
   };
 
   this.addWinkelItem = function (nieuwWinkelItem, cb) {
-      let winkelitems = this.getWinkelItems();
+      var winkelitems = this.getWinkelItems();
       winkelitems.push(Object.assign({
           id: winkelitems.length > 0 ? winkelitems[winkelitems.length - 1].id + 1 : 1
       }, nieuwWinkelItem));
@@ -20,8 +20,8 @@ angular.module('shopApp').service('winkelwagenService', function(){
   };
 
   this.deleteWinkelItem = function (removedWinkelItem, cb) {
-      let winkelitems = this.getWinkelItems();
-      let modified = winkelitems.filter(winkelitem => removedWinkelItem.id !== winkelitem.id);
+      var winkelitems = this.getWinkelItems();
+      var modified = winkelitems.filter(function(winkelitem){ return (removedWinkelItem.id !== winkelitem.id);});
 
       // update localStorage
       this.updateWinkelitems(modified);
@@ -29,8 +29,8 @@ angular.module('shopApp').service('winkelwagenService', function(){
   };
 
   this.updateWinkelItem = function (updateWinkelItem, cb) {
-      let winkelitems = this.getWinkelItems();
-      let modified = winkelitems.map(winkelitem => {
+      var winkelitems = this.getWinkelItems();
+      var modified = winkelitems.map(function(winkelitem) {
           if (winkelitem.id === updateWinkelItem.id) {
               return updateWinkelItem;
           }

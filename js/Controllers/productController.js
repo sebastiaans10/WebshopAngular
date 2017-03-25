@@ -14,7 +14,7 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
                 enoughStock: enoughStock1
             };
 
-            productService.addProduct(newProduct, (data) => {
+            productService.addProduct(newProduct, function callback(data) {
                 $scope.producten = data;
                 $scope.newProductItem = {};
             });
@@ -23,14 +23,14 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
         };
 
         $scope.deleteProduct = function (productItem) {
-            productService.deleteProduct(productItem, (data) => {
+            productService.deleteProduct(productItem, function callback(data) {
                 $scope.producten = data;
             });
         };
 
         $scope.updateProduct = function (productItem) {
             productItem.updating = false;
-            productService.updateProduct(productItem, (data) => {
+            productService.updateProduct(productItem, function callback(data) {
                 $scope.producten = data;
             });
         };

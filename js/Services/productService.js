@@ -11,10 +11,10 @@ angular.module('shopApp')
 
         this.getProduct = function(id){
 
-          let producten = this.getProducten();
+          var producten = this.getProducten();
           console.log(id);
 
-          let product = producten[id-1];
+          var product = producten[id-1];
           return product;
         };
 
@@ -35,7 +35,7 @@ angular.module('shopApp')
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
         this.addProduct = function (nieuwProduct, cb) {
-            let producten = this.getProducten();
+            var producten = this.getProducten();
             producten.push(Object.assign({
                 id: producten.length > 0 ? producten[producten.length - 1].id + 1 : 1
             }, nieuwProduct));
@@ -52,8 +52,8 @@ angular.module('shopApp')
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
         this.deleteProduct = function (removedProduct, cb) {
-            let producten = this.getProducten();
-            let modified = producten.filter(product => removedProduct.id !== product.id);
+            var producten = this.getProducten();
+            var modified = producten.filter(function(product){return(removedProduct.id !== product.id);});
 
             // update localStorage
             this.updateProducten(modified);
@@ -67,8 +67,8 @@ angular.module('shopApp')
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
         this.updateProduct = function (updatedProduct, cb) {
-            let producten = this.getProducten();
-            let modified = producten.map(product => {
+            var producten = this.getProducten();
+            var modified = producten.map(function(product){
                 if (product.id === updatedProduct.id) {
                     return updatedProduct;
                 }

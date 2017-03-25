@@ -9,23 +9,23 @@ shopApp.controller('klantController', ['klantService', '$scope', '$location',
                 email: $scope.newKlantItem.email
             };
 
-            klantService.addKlant(newPerson, (data) => {
-                $scope.klanten = data;
-                $scope.newKlantItem = {};
+            klantService.addKlant(newPerson, function callback(data) {
+              $scope.klanten = data;
+              $scope.newKlantItem = {};
             });
 
             $location.path('/klantLijst');
         };
 
         $scope.deleteKlant = function (klantItem) {
-            klantService.deleteKlant(klantItem, (data) => {
+            klantService.deleteKlant(klantItem, function callback(data) {
                 $scope.klanten = data;
             });
         };
 
         $scope.updateKlant = function (klantItem) {
             klantItem.updating = false;
-            klantService.updateKlant(klantItem, (data) => {
+            klantService.updateKlant(klantItem, function callback(data) {
                 $scope.klanten = data;
             });
         };

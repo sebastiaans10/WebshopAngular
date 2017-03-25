@@ -6,26 +6,26 @@ function(winkelwagenService, productService, klantService, $scope, $location){
 
 	updateProduct = function(product) {
 			console.log(product);
-			let newItem = productService.updateVoorraadPositive(product);
+			var newItem = productService.updateVoorraadPositive(product);
 			newItem.updating = false;
-			productService.updateProduct(newItem, (data) => {
+			productService.updateProduct(newItem, function callback(data) {
 					products = data;
 			});
 	};
 
 	getProduct = function(winkelitem){
 		var id = winkelitem.pID;
-		let product = productService.getProduct(id);
+		var product = productService.getProduct(id);
 		return product;
 	};
 
 	$scope.deleteWinkelItem = function (winkelitem) {
 		console.log(winkelitem.pID);
-			let product = getProduct(winkelitem);
+			var product = getProduct(winkelitem);
 
 			updateProduct(product);
 
-						winkelwagenService.deleteWinkelItem(winkelitem, (data) => {
+						winkelwagenService.deleteWinkelItem(winkelitem, function callback(data){
 					$scope.winkelitems = data;
 			});
 	};

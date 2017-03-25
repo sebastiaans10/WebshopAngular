@@ -19,7 +19,9 @@ module.exports = function(config) {
       '../bower_components/angular-mocks/angular-mocks.js',
       '../bower_components/angular-route/angular-route.js',
 
-      '../sripts/**/*.js',
+      '../js/*.js',
+      '../js/**/*.js',
+
       'spec/**/*.js',
       'spec/*.js'
     ],
@@ -27,6 +29,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
+      '../js/Layout/*.js'
     ],
 
 
@@ -71,5 +74,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
-}
+  });
+};
