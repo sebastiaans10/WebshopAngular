@@ -1,5 +1,5 @@
 describe('Test the shopController', function() {
-  beforeEach(module('shopApp'));
+  beforeEach(angular.module('shopApp'));
 
 
 var $controller, scope;
