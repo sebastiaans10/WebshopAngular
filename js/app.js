@@ -1,5 +1,23 @@
 var shopApp = angular.module('shopApp', ['ngRoute']);
 
+shopApp.filter('priceGreaterThan', function () {
+
+    return function (input, price) {
+      if(price===undefined||price===""){
+        return input;
+      }
+      var resultItems=[];
+      for(var x in input){
+        var item = input[x];
+        if(item.price > price) {
+          resultItems.push(item);
+        }
+
+      }
+        return resultItems;
+    };
+});
+
 shopApp.directive('myClock', myClock);
 
 function myClock(){
@@ -19,6 +37,8 @@ function clockController($interval){
   }, 1000);
 
 }
+
+
 
 shopApp.config(['$routeProvider', function($routeProvider) {
 

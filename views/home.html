@@ -8,8 +8,9 @@
      <!-- /.row -->
      <div class="row">
          <div class="col-lg-12 text-center">
+           <input type="number" class="form-control" placeholder="Search here"  ng-model="filterPrice"/>
              <div id="products" class="row list-group">
-                 <div class="item  col-xs-4 col-lg-4" ng-repeat="item in items  track by item.id">
+                 <div class="item  col-xs-4 col-lg-4" ng-repeat="item in items  | priceGreaterThan:filterPrice ">
                      <div class="thumbnail">
                          <img class="group list-group-image" ng-src="{{item.image}}" alt="" />
                          <div class="caption">
@@ -30,7 +31,7 @@
                                    <div ng-hide="item.enoughStock">
                                    Er is niet voldoende voorraad aanwezig.
                                  </div>
-                                     <a class="btn btn-success" ng-enabled="item.enoughStock"
+                                     <a class="btn btn-success" ng-disabled="!(item.enoughStock)"
                                       ng-click="addItemToCart(item)">Bestel</a>
                                  </div>
                              </div>

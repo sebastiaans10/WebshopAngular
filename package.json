@@ -1,0 +1,14 @@
+{
+  "name": "(angular-les-4)",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "sebastiaan vd akker",
+  "license": "ISC"
+}
