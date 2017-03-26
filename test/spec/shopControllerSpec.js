@@ -27,11 +27,4 @@ describe('Test the shopController', function() {
         //expect(true).toBeTruthy();
     });
 
-    it('should fail', function() {
-        //  var controller = $controller('shopController', {$scope:$scope});
-
-
-        //  expect(true).not.toBe(true);
-    });
-
 });
