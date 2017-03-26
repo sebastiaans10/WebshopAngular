@@ -1,16 +1,21 @@
-shopApp.controller('shopController', ['productService', 'winkelwagenService', 'klantService', '$scope', '$location',
+angular.module('shopApp').controller('shopController', ['productService', 'winkelwagenService', 'klantService', '$scope', '$location',
     function(productService, winkelwagenService, klantService, $scope, $location) {
         $scope.items = productService.getProducten();
-
+        //$scope.winkelitems=[];
         $scope.addItemToCart = function(item) {
 
           console.log(item.voorraad);
           console.log(item.enoughStock);
           if(item.voorraad>0){
             item.enoughStock =true;
+            var klant = {};
+            if(klantService.getKlant(1)===undefined||klantService.getKlant(1)===""){
+              klant = {id:1, name:"Sebas", adres:"lindeweg 5", email:"sebas@gmail.com"};
 
-            var klant = klantService.getKlant(1);
-
+            }
+            else{
+             klant = klantService.getKlant(1);
+           }
             var newWinkelItempje = {
                 pID: item.id,
                 pNaam: item.name,

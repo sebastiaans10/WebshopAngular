@@ -9,7 +9,7 @@ shopApp.filter('priceGreaterThan', function () {
       var resultItems=[];
       for(var x in input){
         var item = input[x];
-        if(item.price > price) {
+        if(item.price >= price) {
           resultItems.push(item);
         }
 

@@ -1,4 +1,4 @@
-shopApp.controller('klantController', ['klantService', '$scope', '$location',
+angular.module('shopApp').controller('klantController', ['klantService', '$scope', '$location',
     function (klantService, $scope, $location) {
         $scope.klanten = klantService.getKlanten();
 

@@ -18,12 +18,25 @@ module.exports = function(config) {
       '../bower_components/angular/angular.js',
       '../bower_components/angular-mocks/angular-mocks.js',
       '../bower_components/angular-route/angular-route.js',
+      '../js/app.js',
+      '../js/Controllers/shopController.js',
+      '../js/Controllers/winkelwagenController.js',
+      '../js/Controllers/klantController.js',
+      '../js/Controllers/productController.js',
+      '../js/Services/klantService.js',
+      '../js/Services/shopService.js',
+      '../js/Services/productService.js',
+      '../js/Services/shopService.js',
+      '../js/Services/winkelwagenService.js',
 
-      '../js/*.js',
-      '../js/**/*.js',
 
-      'spec/**/*.js',
-      'spec/*.js'
+
+
+  //    '../js/*.js',
+        'spec/**/*.js',
+      '../js/**/*.js'
+
+    //  'spec/*.js'
     ],
 
 
@@ -64,7 +77,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
