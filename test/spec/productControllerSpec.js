@@ -1,4 +1,4 @@
-describe('Test the shopController', function() {
+describe('Test the productController', function() {
     beforeEach(angular.mock.module('shopApp'));
 
 
@@ -27,6 +27,13 @@ describe('Test the shopController', function() {
         scope.updateProduct(product);
         expect(scope.producten[0].name).toEqual('Voetballetje');
 
+    });
+
+    it('should delete a product item', function() {
+        expect(scope.producten.length).toBe(1);
+        var product = scope.producten[0];
+        scope.deleteProduct(product);
+        expect(scope.producten.length).toBe(0);
     });
 
 });
