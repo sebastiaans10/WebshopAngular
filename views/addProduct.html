@@ -30,7 +30,7 @@
                     <input type="text" class="form-control" id="itemInput" placeholder="voorraad ..." ng-model="newProductItem.voorraad">
                 </div>
 
-                <button type="button" class="btn btn-danger">Reset</button>
+                <button type="button" class="btn btn-danger" ng-click="redirect()">Cancel</button>
                 <button id="addP" type="submit" class="btn btn-primary" ng-click="saveNewProduct()">Save</button>
             </form>
         </div>
