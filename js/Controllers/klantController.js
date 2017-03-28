@@ -2,6 +2,11 @@ angular.module('shopApp').controller('klantController', ['klantService', '$scope
     function (klantService, $scope, $location) {
         $scope.klanten = klantService.getKlanten();
 
+
+                $scope.redirect = function(){
+                  $location.path('/klantLijst');
+        };
+
         $scope.saveNewKlant = function () {
             var newPerson = {
                 name: $scope.newKlantItem.name,
@@ -14,7 +19,7 @@ angular.module('shopApp').controller('klantController', ['klantService', '$scope
               $scope.newKlantItem = {};
             });
 
-            $location.path('/klantLijst');
+            this.redirect();
         };
 
         $scope.deleteKlant = function (klantItem) {
@@ -30,8 +35,5 @@ angular.module('shopApp').controller('klantController', ['klantService', '$scope
             });
         };
 
-        $scope.redirect = function(){
-          $location.path('/klantLijst');
-};
 
     }]);

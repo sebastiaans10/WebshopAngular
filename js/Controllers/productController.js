@@ -2,6 +2,10 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
     function (productService, $scope, $location) {
         $scope.producten = productService.getProducten();
 
+        $scope.redirect = function(){
+          $location.path('/productList');
+};
+
 
         $scope.saveNewProduct = function () {
           var enoughStock1 = true;
@@ -19,7 +23,7 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
                 $scope.newProductItem = {};
             });
 
-            $location.path('/productList.view');
+            this.redirect();
         };
 
         $scope.deleteProduct = function (productItem) {
@@ -35,8 +39,5 @@ shopApp.controller('productController', ['productService', '$scope', '$location'
             });
         };
 
-        $scope.redirect = function(){
-          $location.path('/productList.view');
-};
 
     }]);

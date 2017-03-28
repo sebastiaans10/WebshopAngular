@@ -53,7 +53,7 @@ shopApp.config(
             controller: 'shopController'
         })
         .when('/productList', {
-            templateUrl: 'views/productList.view.html',
+            templateUrl: 'views/productList.html',
             controller: 'productController'
         })
         .when('/addProduct', {
