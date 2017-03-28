@@ -5,7 +5,7 @@ describe('Test product toevoegen', function() {
 
     });
 
-    it('Boek toevoegen', function() {
+    it('Product toevoegen', function() {
         var productList = browser.executeScript("return JSON.parse(localStorage.getItem('producten'));");
         expect(productList.length).toBe(undefined);
         element(by.model('newProductItem.name')).sendKeys("Piano");
