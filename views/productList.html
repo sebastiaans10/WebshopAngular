@@ -28,7 +28,7 @@
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="item in producten">
+                        <tr ng-repeat="item in producten track by $index">
                             <td>
                                 {{item.id}}
 
