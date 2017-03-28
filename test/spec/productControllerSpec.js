@@ -13,11 +13,17 @@ describe('Test the productController', function() {
     }));
 
     it('should add product item', function() {
-      expect(scope.producten.length).toBe(0);
-      scope.newProductItem= {name: 'Voetbal', price: '30', description:'mooi', image: 'img/voetbal.png', voorraad: '4'};
-      scope.saveNewProduct();
-      expect(scope.producten.length).toBe(1);
-      expect(scope.producten[0].name).toEqual('Voetbal');
+        expect(scope.producten.length).toBe(0);
+        scope.newProductItem = {
+            name: 'Voetbal',
+            price: '30',
+            description: 'mooi',
+            image: 'img/voetbal.png',
+            voorraad: '4'
+        };
+        scope.saveNewProduct();
+        expect(scope.producten.length).toBe(1);
+        expect(scope.producten[0].name).toEqual('Voetbal');
 
     });
 

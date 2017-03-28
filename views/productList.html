@@ -1,72 +1,71 @@
+<div class="container">
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 text-left">
-                <h1>Lijst producten: </h1>
-            </div>
+    <div class="row">
+        <div class="col-lg-12 text-left">
+            <h1>Lijst producten: </h1>
         </div>
-        <div class="row">
-            <div class="col-lg-12 text-left">
-              <a class="btn btn-primary" href="#addProduct" role="button">Voeg nieuw product toe</a>
-            </div>
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Naam</th>
-                            <th>Prijs</th>
-                            <th>Omschrijving</th>
-                            <th>Afbeelding</th>
-                            <th>Vooraad</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr ng-repeat="item in producten track by $index">
-                            <td>
-                                {{item.id}}
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.name}}</span>
-                                <input type="text" ng-model="item.name" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.price}}</span>
-                                <input type="text" ng-model="item.price" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.description}}</span>
-                                <textarea type="text" ng-model="item.description" ng-show="item.updating"></textarea>
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.image}}</span>
-                                <input type="text" ng-model="item.image" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <span ng-hide="item.updating">{{item.voorraad}}</span>
-                                <input type="text" ng-model="item.voorraad" ng-show="item.updating">
-
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-success" ng-click="updateProduct(item)" ng-show="item.updating">Save</button>
-                                <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
-                                <button type="button" class="btn btn-danger" ng-click="deleteProduct(item)">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
+    <div class="row">
+        <div class="col-lg-12 text-left">
+            <a class="btn btn-primary" href="#addProduct" role="button">Voeg nieuw product toe</a>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Naam</th>
+                        <th>Prijs</th>
+                        <th>Omschrijving</th>
+                        <th>Afbeelding</th>
+                        <th>Vooraad</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="item in producten track by $index">
+                        <td>
+                            {{item.id}}
+
+                        </td>
+                        <td>
+                            <span ng-hide="item.updating">{{item.name}}</span>
+                            <input type="text" ng-model="item.name" ng-show="item.updating">
+
+                        </td>
+                        <td>
+                            <span ng-hide="item.updating">{{item.price}}</span>
+                            <input type="text" ng-model="item.price" ng-show="item.updating">
+
+                        </td>
+                        <td>
+                            <span ng-hide="item.updating">{{item.description}}</span>
+                            <textarea type="text" ng-model="item.description" ng-show="item.updating"></textarea>
+
+                        </td>
+                        <td>
+                            <span ng-hide="item.updating">{{item.image}}</span>
+                            <input type="text" ng-model="item.image" ng-show="item.updating">
+
+                        </td>
+                        <td>
+                            <span ng-hide="item.updating">{{item.voorraad}}</span>
+                            <input type="text" ng-model="item.voorraad" ng-show="item.updating">
+
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-success" ng-click="updateProduct(item)" ng-show="item.updating">Save</button>
+                            <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
+                            <button type="button" class="btn btn-danger" ng-click="deleteProduct(item)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,17 +1,17 @@
 angular.module('shopApp')
-    .service('klantService', function () {
+    .service('klantService', function() {
         /**
          * Haalt de klant data uit localStorage op.
          *
          * @return {array} - Lijst met klanten.
          */
-        this.getKlanten = function () {
+        this.getKlanten = function() {
             return JSON.parse(localStorage.getItem('klanten')) || [];
         };
 
-        this.getKlant = function(id){
-          var klanten = this.getKlanten();
-          return klanten[id-1];
+        this.getKlant = function(id) {
+            var klanten = this.getKlanten();
+            return klanten[id - 1];
         };
 
         /**
@@ -19,7 +19,7 @@ angular.module('shopApp')
          *
          * @param {array} data - De nieuwe array met klanten.
          */
-        this.updateKlanten = function (data) {
+        this.updateKlanten = function(data) {
             localStorage.setItem('klanten', JSON.stringify(data));
         };
 
@@ -30,7 +30,7 @@ angular.module('shopApp')
          * @param {object} klant - De nieuwe klant die toegevoegd moet worden.
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
-        this.addKlant = function (nieuweKlant, cb) {
+        this.addKlant = function(nieuweKlant, cb) {
             var klanten = this.getKlanten();
             klanten.push(Object.assign({
                 id: klanten.length > 0 ? klanten[klanten.length - 1].id + 1 : 1
@@ -42,14 +42,16 @@ angular.module('shopApp')
         };
 
         /**
-         * Verwijderd een nieuwe klant uit de array met klanten uit localStorage.
+         * Verwijdert een nieuwe klant uit de array met klanten uit localStorage.
          *
          * @param {object} removedKlant - Klant die verwijderd dient te worden.
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
-        this.deleteKlant = function (removedKlant, cb) {
+        this.deleteKlant = function(removedKlant, cb) {
             var klanten = this.getKlanten();
-            var modified = klanten.filter(function(klant) {return (removedKlant.id !== klant.id);});
+            var modified = klanten.filter(function(klant) {
+                return (removedKlant.id !== klant.id);
+            });
 
             // update localStorage
             this.updateKlanten(modified);
@@ -62,7 +64,7 @@ angular.module('shopApp')
          * @param {object} updatedKlant - Klant die gewijzigd moet worden.
          * @param {function} cb - De functie die aangeroepen wordt wanneer alles gedaan is.
          */
-        this.updateKlant = function (updatedKlant, cb) {
+        this.updateKlant = function(updatedKlant, cb) {
             var klanten = this.getKlanten();
             var modified = klanten.map(function(klant) {
                 if (klant.id === updatedKlant.id) {

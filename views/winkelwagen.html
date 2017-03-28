@@ -1,48 +1,48 @@
 <div class="container">
 
-<div class="row">
-  <div class="col-lg-12 text-left">
-      <h1>Uw winkelwagen </h1>
-  </div>
-   <table class="table">
-       <thead>
-           <tr>
-               <th>ID</th>
-               <th>ProductID</th>
-               <th>ProductNaam</th>
-               <th>KlantID</th>
-               <th>KlantNaam</th>
-           </tr>
-       </thead>
+    <div class="row">
+        <div class="col-lg-12 text-left">
+            <h1>Uw winkelwagen </h1>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ProductID</th>
+                    <th>ProductNaam</th>
+                    <th>KlantID</th>
+                    <th>KlantNaam</th>
+                </tr>
+            </thead>
 
-       <tbody>
-           <tr ng-repeat="winkelitem in winkelitems">
-             <td>
-               {{winkelitem.id}}
+            <tbody>
+                <tr ng-repeat="winkelitem in winkelitems">
+                    <td>
+                        {{winkelitem.id}}
 
-             </td>
+                    </td>
 
-               <td>
-                   {{winkelitem.pID}}
+                    <td>
+                        {{winkelitem.pID}}
 
-               </td>
-               <td>
-                   {{winkelitem.pNaam}}
-               </td>
-               <td>
-                   {{winkelitem.kID}}
+                    </td>
+                    <td>
+                        {{winkelitem.pNaam}}
+                    </td>
+                    <td>
+                        {{winkelitem.kID}}
 
 
-               </td>
-               <td>
-                   {{winkelitem.kNaam}}
+                    </td>
+                    <td>
+                        {{winkelitem.kNaam}}
 
-               </td>
-               <td>
-                   <button type="button" class="btn btn-danger" ng-click="deleteWinkelItem(winkelitem)">Delete</button>
-               </td>
-           </tr>
-       </tbody>
-   </table>
-</div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" ng-click="deleteWinkelItem(winkelitem)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

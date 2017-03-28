@@ -16,10 +16,18 @@ describe('Test the shopController', function() {
         //var controller = $controller('shopController', {$scope:$scope});
         //scope.items = productService.getProducten();
         scope.winkelitems = [];
-        scope.item =null;
+        scope.item = null;
         var item = null;
         expect(scope.winkelitems.length).toBe(0);
-        scope.item = {id: 1,name: 'Piano', price: '1500', description:'oke', image: '', voorraad: '5', enoughStock:true};
+        scope.item = {
+            id: 1,
+            name: 'Piano',
+            price: '1500',
+            description: 'oke',
+            image: '',
+            voorraad: '5',
+            enoughStock: true
+        };
         item = scope.item;
         scope.addItemToCart(item);
         expect(scope.winkelitems.length).toBe(1);

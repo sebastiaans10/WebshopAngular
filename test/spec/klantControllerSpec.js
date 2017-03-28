@@ -13,10 +13,14 @@ describe('Test the klantController', function() {
     }));
 
     it('should add klant item', function() {
-      expect(scope.klanten.length).toBe(0);
-      scope.newKlantItem = {name: 'Sebas', adres: 'Lindeweg 5', email: 'sebas@gmail.com'};
-      scope.saveNewKlant();
-      expect(scope.klanten.length).toBe(1);
+        expect(scope.klanten.length).toBe(0);
+        scope.newKlantItem = {
+            name: 'Sebas',
+            adres: 'Lindeweg 5',
+            email: 'sebas@gmail.com'
+        };
+        scope.saveNewKlant();
+        expect(scope.klanten.length).toBe(1);
     });
 
     it('should update a klant item', function() {
